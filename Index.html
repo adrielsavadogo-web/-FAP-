@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAP - Guide Agricole</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/seedling.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height:1.6; color:#333; background:#f4f4f4; }
+
+        header {
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            color:#fff; padding:40px 20px; text-align:center;
+        }
+        header h1 { font-size:2.5rem; margin-bottom:10px; }
+        header p { font-size:1.2rem; }
+
+        nav {
+            background:#2E7D32; position: sticky; top:0; z-index:1000;
+        }
+        nav ul { display:flex; justify-content:center; flex-wrap:wrap; list-style:none; }
+        nav ul li { margin:0 15px; }
+        nav ul li a { color:#fff; text-decoration:none; padding:15px 0; display:block; font-weight:bold; transition:0.3s; }
+        nav ul li a:hover { color:#A5D6A7; }
+
+        .banner { text-align:center; padding:60px 20px; background:#E8F5E9; }
+        .banner h2 { font-size:2rem; margin-bottom:20px; }
+        .btn { display:inline-block; background:#4CAF50; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; transition:0.3s; }
+        .btn:hover { background:#388E3C; transform: scale(1.05); }
+
+        section { padding:50px 20px; max-width:1200px; margin:auto; }
+        section h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:#2E7D32; }
+
+        .card-container { display:flex; flex-wrap:wrap; justify-content:space-around; gap:25px; }
+        .card {
+            background:#fff; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); padding:25px; width:300px;
+            opacity:0; transform: translateY(50px); transition: all 0.8s ease;
+        }
+        .card.visible { opacity:1; transform: translateY(0); }
+        .card h3 { color:#388E3C; margin-bottom:15px; }
+        .card p { margin-bottom:10px; }
+
+        form input, form textarea {
+            width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; resize:none;
+        }
+        form button { width:100%; padding:12px; border:none; background:#4CAF50; color:#fff; font-size:1rem; border-radius:8px; cursor:pointer; transition:0.3s; }
+        form button:hover { background:#388E3C; transform: scale(1.03); }
+
+        footer { background:#2E7D32; color:#fff; text-align:center; padding:25px; margin-top:40px; }
+
+        @media(max-width:768px){
+            nav ul { flex-direction:column; }
+            .card-container { flex-direction:column; align-items:center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-seedling"></i> FAP</h1>
+    <p>Votre guide pour une agriculture efficace</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#guide"><i class="fas fa-leaf"></i> Guide Engrais</a></li>
+        <li><a href="#maladies"><i class="fas fa-bug"></i> Maladies</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
+<section class="banner">
+    <h2>Améliorez vos cultures avec FAP</h2>
+    <p>Des conseils simples et efficaces pour utiliser les engrais et protéger vos cultures.</p>
+    <a href="#guide" class="btn">Découvrir le guide</a>
+</section>
+
+<section id="guide">
+    <h2><i class="fas fa-leaf"></i> Guide des Engrais</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>NPK 15-15-15</h3>
+            <p><strong>Culture :</strong> Maïs</p>
+            <p><strong>Quantité :</strong> 100 kg/ha</p>
+            <p><strong>Application :</strong> Semis + 4 semaines après</p>
+        </div>
+        <div class="card">
+            <h3>Urée</h3>
+            <p><strong>Culture :</strong> Riz</p>
+            <p><strong>Quantité :</strong> 50 kg/ha</p>
+            <p><strong>Application :</strong> 3 semaines après plantation</p>
+        </div>
+        <div class="card">
+            <h3>Phosphate Diammonique</h3>
+            <p><strong>Culture :</strong> Millet</p>
+            <p><strong>Quantité :</strong> 80 kg/ha</p>
+            <p><strong>Application :</strong> Semis</p>
+        </div>
+    </div>
+</section>
+
+<section id="maladies">
+    <h2><i class="fas fa-bug"></i> Symptômes et Maladies</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Mildiou</h3>
+            <p><strong>Symptômes :</strong> Taches brunes sur les feuilles, croissance ralentie</p>
+            <p><strong>Traitement :</strong> Fongicide recommandé</p>
+        </div>
+        <div class="card">
+            <h3>Pucerons</h3>
+            <p><strong>Symptômes :</strong> Feuilles jaunes, petits insectes verts</p>
+            <p><strong>Traitement :</strong> Insecticide biologique ou chimique</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2><i class="fas fa-envelope"></i> Contactez-nous</h2>
+    <form action="https://formspree.io/f/TON_CODE" method="POST" id="contactForm">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 FAP. Tous droits réservés.</p>
+</footer>
+
+<script>
+    // Animation au scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
