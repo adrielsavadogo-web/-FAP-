@@ -1,149 +1,187 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAP - Guide Agricole</title>
-    <link rel="icon" href="https://img.icons8.com/color/48/000000/seedling.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { line-height:1.6; color:#333; background:#f4f4f4; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAP — Guide agricole (Accueil)</title>
 
-        header {
-            background: linear-gradient(135deg, #4CAF50, #81C784);
-            color:#fff; padding:40px 20px; text-align:center;
-        }
-        header h1 { font-size:2.5rem; margin-bottom:10px; }
-        header p { font-size:1.2rem; }
+  <!-- Description utile pour le référencement -->
+  <meta name="description" content="FAP — Guide agricole pour le Burkina Faso. Fiches détaillées (maïs, riz, coton) avec unités locales, vidéos et mode Premium." />
 
-        nav {
-            background:#2E7D32; position: sticky; top:0; z-index:1000;
-        }
-        nav ul { display:flex; justify-content:center; flex-wrap:wrap; list-style:none; }
-        nav ul li { margin:0 15px; }
-        nav ul li a { color:#fff; text-decoration:none; padding:15px 0; display:block; font-weight:bold; transition:0.3s; }
-        nav ul li a:hover { color:#A5D6A7; }
+  <!-- Content Security Policy (méta-basique). 
+       Remarque : pour une CSP complète et stricte, configure-la côté serveur (ex : via Cloudflare ou Nginx headers). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' https://js.paystack.co https://www.youtube.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src https://www.youtube.com https://player.vimeo.com https://js.paystack.co; connect-src 'self' https://formspree.io https://api.paystack.co https://api.flutterwave.com;" />
 
-        .banner { text-align:center; padding:60px 20px; background:#E8F5E9; }
-        .banner h2 { font-size:2rem; margin-bottom:20px; }
-        .btn { display:inline-block; background:#4CAF50; color:#fff; padding:12px 25px; border-radius:8px; text-decoration:none; transition:0.3s; }
-        .btn:hover { background:#388E3C; transform: scale(1.05); }
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
 
-        section { padding:50px 20px; max-width:1200px; margin:auto; }
-        section h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:#2E7D32; }
+  <!-- Favicon simple (remplace par ton fichier) -->
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
 
-        .card-container { display:flex; flex-wrap:wrap; justify-content:space-around; gap:25px; }
-        .card {
-            background:#fff; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); padding:25px; width:300px;
-            opacity:0; transform: translateY(50px); transition: all 0.8s ease;
-        }
-        .card.visible { opacity:1; transform: translateY(0); }
-        .card h3 { color:#388E3C; margin-bottom:15px; }
-        .card p { margin-bottom:10px; }
+  <!-- Styles (fichier externe) -->
+  <link rel="stylesheet" href="style.css">
 
-        form input, form textarea {
-            width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; resize:none;
-        }
-        form button { width:100%; padding:12px; border:none; background:#4CAF50; color:#fff; font-size:1rem; border-radius:8px; cursor:pointer; transition:0.3s; }
-        form button:hover { background:#388E3C; transform: scale(1.03); }
+  <!-- Chargement du script principal (registre service worker + logique) -->
+  <script defer src="script.js"></script>
 
-        footer { background:#2E7D32; color:#fff; text-align:center; padding:25px; margin-top:40px; }
-
-        @media(max-width:768px){
-            nav ul { flex-direction:column; }
-            .card-container { flex-direction:column; align-items:center; }
-        }
-    </style>
+  <!-- Accessible font fallback -->
+  <style>
+    /* Petite CSS de secours si style.css ne charge pas (améliore affichage initial) */
+    :root{--brand:#2e7d32;--dark:#1b5e20}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f6f7f8;color:#222}
+    a{color:var(--brand)}
+  </style>
 </head>
+
 <body>
+  <!-- Header / Hero -->
+  <header class="hero" role="banner" aria-label="Bannière FAP">
+    <div class="container">
+      <h1 class="site-title">FAP <span aria-hidden="true">🌱</span></h1>
+      <p class="lead">Guides pratiques pour les agriculteurs du Burkina Faso — maïs, riz, coton. Unités locales (pas, largeur de daba, bouchon, boîte de tomate).</p>
 
-<header>
-    <h1><i class="fas fa-seedling"></i> FAP</h1>
-    <p>Votre guide pour une agriculture efficace</p>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="#guide"><i class="fas fa-leaf"></i> Guide Engrais</a></li>
-        <li><a href="#maladies"><i class="fas fa-bug"></i> Maladies</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-</nav>
-
-<section class="banner">
-    <h2>Améliorez vos cultures avec FAP</h2>
-    <p>Des conseils simples et efficaces pour utiliser les engrais et protéger vos cultures.</p>
-    <a href="#guide" class="btn">Découvrir le guide</a>
-</section>
-
-<section id="guide">
-    <h2><i class="fas fa-leaf"></i> Guide des Engrais</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>NPK 15-15-15</h3>
-            <p><strong>Culture :</strong> Maïs</p>
-            <p><strong>Quantité :</strong> 100 kg/ha</p>
-            <p><strong>Application :</strong> Semis + 4 semaines après</p>
-        </div>
-        <div class="card">
-            <h3>Urée</h3>
-            <p><strong>Culture :</strong> Riz</p>
-            <p><strong>Quantité :</strong> 50 kg/ha</p>
-            <p><strong>Application :</strong> 3 semaines après plantation</p>
-        </div>
-        <div class="card">
-            <h3>Phosphate Diammonique</h3>
-            <p><strong>Culture :</strong> Millet</p>
-            <p><strong>Quantité :</strong> 80 kg/ha</p>
-            <p><strong>Application :</strong> Semis</p>
-        </div>
+      <div class="hero-actions" role="navigation" aria-label="Actions principales">
+        <a class="btn" href="inscription.html">S'inscrire</a>
+        <a class="btn btn-outline" href="connexion.html">Se connecter</a>
+        <a class="btn" href="pricing.html">Abonnement Premium</a>
+      </div>
     </div>
-</section>
+  </header>
 
-<section id="maladies">
-    <h2><i class="fas fa-bug"></i> Symptômes et Maladies</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Mildiou</h3>
-            <p><strong>Symptômes :</strong> Taches brunes sur les feuilles, croissance ralentie</p>
-            <p><strong>Traitement :</strong> Fongicide recommandé</p>
-        </div>
-        <div class="card">
-            <h3>Pucerons</h3>
-            <p><strong>Symptômes :</strong> Feuilles jaunes, petits insectes verts</p>
-            <p><strong>Traitement :</strong> Insecticide biologique ou chimique</p>
-        </div>
+  <!-- Navigation principale -->
+  <nav class="topnav" role="navigation" aria-label="Menu principal">
+    <div class="container">
+      <a href="index.html" class="nav-logo">FAP</a>
+      <ul class="nav-list" role="menubar">
+        <li role="none"><a role="menuitem" href="mais.html">Maïs</a></li>
+        <li role="none"><a role="menuitem" href="riz.html">Riz</a></li>
+        <li role="none"><a role="menuitem" href="coton.html">Coton</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+        <li role="none"><a role="menuitem" href="apropos.html">À propos</a></li>
+      </ul>
     </div>
-</section>
+  </nav>
 
-<section id="contact">
-    <h2><i class="fas fa-envelope"></i> Contactez-nous</h2>
-    <form action="https://formspree.io/f/mqaderbn" method="POST" id="contactForm">
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-</section>
+  <!-- Contenu principal -->
+  <main class="container" id="main" role="main">
+    <!-- Section 1 : Pourquoi FAP -->
+    <section class="card intro" aria-labelledby="why-title">
+      <h2 id="why-title">Pourquoi FAP ?</h2>
+      <p>FAP offre des fiches pratiques et vérifiées, adaptées au Burkina Faso : gestes simples, unités locales (pas, largeur de daba, bouchon...), vidéos terrain, et conseils pour diminuer la pollution agricole.</p>
+    </section>
 
-<footer>
-    <p>&copy; 2025 FAP. Tous droits réservés.</p>
-</footer>
+    <!-- Section 2 : Unités locales (mise en avant) -->
+    <section class="card units" aria-labelledby="units-title">
+      <h2 id="units-title">Unités locales — comment mesurer sur le terrain</h2>
+      <ul>
+        <li><strong>Pas</strong> — distance d'un pas normal d'adulte (talon à talon).</li>
+        <li><strong>Largeur de daba</strong> — largeur de la houe (outil courant).</li>
+        <li><strong>Bouchon</strong> — bouchon plastique d'une bouteille locale (≈ repère pour petites doses).</li>
+        <li><strong>Boîte de tomate</strong> — conserves/boîte (repère pour compost ou fumier).</li>
+        <li><strong>Gobelet / Cuillère</strong> — mesures usuelles pour microdose.</li>
+      </ul>
+      <p class="note">Ces repères sont indicatifs : toujours respecter l'étiquette des intrants et demander conseil local si vous hésitez.</p>
+    </section>
 
-<script>
-    // Animation au scroll
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
+    <!-- Section 3 : Accès aux fiches -->
+    <section class="card grid" aria-labelledby="fiches-title">
+      <h2 id="fiches-title">Fiches complètes</h2>
 
-    cards.forEach(card => observer.observe(card));
-</script>
+      <article class="tile">
+        <h3>🌽 Maïs</h3>
+        <p>Préparation, semis, fertilisation microdose, maladies, vidéos, PDF.</p>
+        <p><a class="link" href="mais.html">Voir la fiche Maïs</a></p>
+      </article>
+
+      <article class="tile">
+        <h3>🌾 Riz</h3>
+        <p>Pépinière, transplantation, gestion de l'eau (AWD), maladies, vidéos, PDF.</p>
+        <p><a class="link" href="riz.html">Voir la fiche Riz</a></p>
+      </article>
+
+      <article class="tile">
+        <h3>🧵 Coton</h3>
+        <p>Conduite culturale, nutrition, ravageurs, stockage et écologie.</p>
+        <p><a class="link" href="coton.html">Voir la fiche Coton</a></p>
+      </article>
+    </section>
+
+    <!-- Section 4 : Témoignage / Vidéo rapide -->
+    <section class="card" aria-labelledby="video-title">
+      <h2 id="video-title">Démonstration rapide</h2>
+      <p>Vidéo courte d'exemple (préparation sol et microdose) — visible directement sur la page.</p>
+
+      <!-- Intégration YouTube (responsive) -->
+      <div class="video-wrap" aria-hidden="false">
+        <iframe width="100%" height="320"
+          src="https://www.youtube.com/embed/3Gx4SuN1RXc"
+          title="Technique microdose maïs"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Section 5 : Contact rapide -->
+    <section class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact / Signalement</h2>
+      <p>Si vous voyez une maladie ou un problème sur une parcelle, envoyez-nous un message avec une photo.</p>
+
+      <!-- Formulaire --- Formspree (remplacer TON_CODE_FORMSPREE par votre code) -->
+      <form class="form" id="contactForm" action="https://formspree.io/f/TON_CODE_FORMSPREE" method="POST" aria-describedby="contact-note">
+        <label>Nom
+          <input name="name" type="text" required aria-required="true" />
+        </label>
+
+        <label>Email
+          <input name="email" type="email" required aria-required="true" />
+        </label>
+
+        <label>Message
+          <textarea name="message" rows="4" required aria-required="true"></textarea>
+        </label>
+
+        <label>Photo (optionnelle)
+          <input name="photo" type="url" placeholder="URL de l'image (hébergée)" aria-describedby="photo-help" />
+          <small id="photo-help">Pour envoyer une photo depuis votre téléphone, vous pouvez d'abord l'héberger (ex. WhatsApp, Google Drive public) et coller le lien ici.</small>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" required /> J'accepte le traitement de mon message (RGPD/consentement)
+        </label>
+
+        <div>
+          <button class="btn" type="submit">Envoyer</button>
+        </div>
+
+        <p id="contact-note" class="note">Formulaire protégé par Formspree. Remplacez <code>TON_CODE_FORMSPREE</code> par votre code Formspree (voir instructions dans le README).</p>
+      </form>
+    </section>
+
+    <!-- Section 6 : Abonnement et PWA -->
+    <section class="card" aria-labelledby="pwa-title">
+      <h2 id="pwa-title">Mode Premium & Application</h2>
+      <p>Abonnement Premium : <strong>25 000 XOF / mois</strong> ou <strong>85 000 XOF / an</strong> — accès aux PDF, guides avancés, support prioritaire et contenu hors-ligne (PWA).</p>
+      <p>Vous pouvez installer FAP sur votre téléphone comme une application (bouton d'installation proposé par votre navigateur).</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 FAP — Burkina Faso. Conseils indicatifs ; consultez un technicien local pour prescriptions chimiques.</p>
+      <p class="muted">Site développé pour usage pédagogique et pratique. Ne remplace pas un diagnostic technique en personne.</p>
+    </div>
+  </footer>
+
+  <!-- NOTE POUR LE DEPLOIEMENT
+       - Remplace TON_CODE_FORMSPREE dans le formulaire par ton code Formspree.
+       - Assure-toi d'ajouter style.css et script.js à la racine du dépôt.
+       - Active GitHub Pages: Settings → Pages → Source = main branch / (root).
+       - Pour PWA complet, inclure manifest.json et service-worker.js (je te fournis ces fichiers ensuite).
+  -->
 
 </body>
 </html>
