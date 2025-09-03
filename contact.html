@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - FAP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="topnav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">🌾 FAP</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mais.html">Maïs</a></li>
+        <li><a href="riz.html">Riz</a></li>
+        <li><a href="coton.html">Coton</a></li>
+        <li><a href="premium.html">Premium</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
+  <!-- Formulaire de contact -->
+  <main class="container">
+    <h1>📩 Contactez-nous</h1>
+    <p>Vous pouvez nous écrire directement via ce formulaire :</p>
+
+    <form action="https://formspree.io/f/mzzbwdbv" method="POST" class="form">
+      <label>Nom :
+        <input type="text" name="nom" required>
+      </label>
+      <label>Email :
+        <input type="email" name="email" required>
+      </label>
+      <label>Message :
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <p style="margin-top:1rem;">
+      📧 Ou écrivez-nous directement à : 
+      <a href="mailto:fapagricole@gmail.com">fapagricole@gmail.com</a>
+    </p>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <p>&copy; 2025 FAP - Formation Agricole Pratique</p>
+  </footer>
+</body>
+</html>
