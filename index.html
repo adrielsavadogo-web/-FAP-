@@ -3,36 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAP Agricole - Guides pour Riz, Maïs, Coton au Burkina Faso</title>
-  <meta name="description" content="FAP Agricole - Formation Agricole Pratique pour le Burkina Faso : guides détaillés, maladies et traitements, vidéos explicatives. Améliorez vos récoltes de maïs, riz et coton.">
-  <meta name="keywords" content="agriculture Burkina Faso, FAP Agricole, riz, maïs, coton, formations agricoles, maladies, traitements, récoltes">
-  <<meta name="google-site-verification" content="NtDH_lx-F8RRSQvSFQEbJAK9GcmQzz9mOnbTgmhMjOI" />/head>
+  <title>FAP — Guide agricole (Accueil)</title>
 
-  <!-- Description utile pour le référencement -->
-  <meta name="description" content="FAP — Guide agricole pour le Burkina Faso. Fiches détaillées (maïs, riz, coton) avec unités locales, vidéos et mode Premium." />
+  <!-- ✅ Description SEO -->
+  <meta name="description" content="FAP — Guide agricole pour le Burkina Faso. Fiches détaillées (maïs, riz, coton, sorgho, mil, niébé) avec unités locales, vidéos, maladies, traitements et mode Premium." />
 
-  <!-- Content Security Policy (méta-basique). 
-       Remarque : pour une CSP complète et stricte, configure-la côté serveur (ex : via Cloudflare ou Nginx headers). -->
+  <!-- ✅ Mots-clés (SEO classique, certains moteurs l’utilisent encore) -->
+  <meta name="keywords" content="agriculture Burkina Faso, FAP Agricole, maïs, riz, coton, sorgho, mil, niébé, engrais, maladies, traitements, microdose, culture" />
+
+  <!-- ✅ Auteur -->
+  <meta name="author" content="FAP Agricole" />
+
+  <!-- ✅ Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="FAP — Guide agricole Burkina Faso" />
+  <meta property="og:description" content="Guides agricoles complets adaptés aux cultivateurs du Burkina Faso : maïs, riz, coton, sorgho, mil, niébé. Unités locales, maladies, traitements, vidéos et Premium." />
+  <meta property="og:image" content="https://tonsite.com/icons/icon-512.png" />
+  <meta property="og:url" content="https://tonsite.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAP — Guide agricole Burkina Faso" />
+  <meta name="twitter:description" content="Guides agricoles détaillés pour le Burkina Faso : maïs, riz, coton, sorgho, mil, niébé. Avec unités locales, vidéos, maladies, traitements et mode Premium." />
+  <meta name="twitter:image" content="https://tonsite.com/icons/icon-512.png" />
+
+  <!-- ✅ Google Site Verification -->
+  <meta name="google-site-verification" content="A_REMPLACER_PAR_GOOGLE" />
+
+  <!-- ✅ Content Security Policy (basique, renforcée côté serveur) -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' https://js.paystack.co https://www.youtube.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src https://www.youtube.com https://player.vimeo.com https://js.paystack.co; connect-src 'self' https://formspree.io https://api.paystack.co https://api.flutterwave.com;" />
 
-  <!-- PWA manifest -->
+  <!-- ✅ PWA manifest -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Favicon simple (remplace par ton fichier) -->
+  <!-- ✅ Favicon -->
   <link rel="icon" href="icons/icon-192.png" type="image/png">
 
-  <!-- Styles (fichier externe) -->
+  <!-- ✅ Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Chargement du script principal (registre service worker + logique) -->
+  <!-- ✅ Script -->
   <script defer src="script.js"></script>
 
-  <!-- Accessible font fallback -->
+  <!-- ✅ Petite CSS de secours -->
   <style>
-    /* Petite CSS de secours si style.css ne charge pas (améliore affichage initial) */
     :root{--brand:#2e7d32;--dark:#1b5e20}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f6f7f8;color:#222}
     a{color:var(--brand)}
@@ -40,16 +54,16 @@
 </head>
 
 <body>
-  <!-- Header / Hero -->
+  <!-- Header -->
   <header class="hero" role="banner" aria-label="Bannière FAP">
     <div class="container">
       <h1 class="site-title">FAP <span aria-hidden="true">🌱</span></h1>
-      <p class="lead">Guides pratiques pour les agriculteurs du Burkina Faso — maïs, riz, coton. Unités locales (pas, largeur de daba, bouchon, boîte de tomate).</p>
+      <p class="lead">Guides pratiques pour les agriculteurs du Burkina Faso — maïs, riz, coton, sorgho, mil, niébé. Unités locales (pas, daba, bouchon, boîte de tomate).</p>
 
       <div class="hero-actions" role="navigation" aria-label="Actions principales">
         <a class="btn" href="inscription.html">S'inscrire</a>
         <a class="btn btn-outline" href="connexion.html">Se connecter</a>
-        <a class="btn" href="pricing.html">Abonnement Premium</a>
+        <a class="btn" href="premium.html">Abonnement Premium</a>
       </div>
     </div>
   </header>
@@ -62,6 +76,9 @@
         <li role="none"><a role="menuitem" href="mais.html">Maïs</a></li>
         <li role="none"><a role="menuitem" href="riz.html">Riz</a></li>
         <li role="none"><a role="menuitem" href="coton.html">Coton</a></li>
+        <li role="none"><a role="menuitem" href="sorgho.html">Sorgho</a></li>
+        <li role="none"><a role="menuitem" href="mil.html">Mil</a></li>
+        <li role="none"><a role="menuitem" href="niebe.html">Niébé</a></li>
         <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
         <li role="none"><a role="menuitem" href="apropos.html">À propos</a></li>
       </ul>
@@ -70,55 +87,35 @@
 
   <!-- Contenu principal -->
   <main class="container" id="main" role="main">
-    <!-- Section 1 : Pourquoi FAP -->
-    <section class="card intro" aria-labelledby="why-title">
-      <h2 id="why-title">Pourquoi FAP ?</h2>
-      <p>FAP offre des fiches pratiques et vérifiées, adaptées au Burkina Faso : gestes simples, unités locales (pas, largeur de daba, bouchon...), vidéos terrain, et conseils pour diminuer la pollution agricole.</p>
+    <section class="card intro">
+      <h2>Pourquoi choisir FAP ?</h2>
+      <p>FAP propose des fiches pratiques et vérifiées, adaptées au Burkina Faso : gestes simples, unités locales, vidéos terrain et conseils pour réduire la pollution agricole.</p>
     </section>
 
-    <!-- Section 2 : Unités locales (mise en avant) -->
-    <section class="card units" aria-labelledby="units-title">
-      <h2 id="units-title">Unités locales — comment mesurer sur le terrain</h2>
+    <section class="card units">
+      <h2>📏 Unités locales utilisées</h2>
       <ul>
-        <li><strong>Pas</strong> — distance d'un pas normal d'adulte (talon à talon).</li>
-        <li><strong>Largeur de daba</strong> — largeur de la houe (outil courant).</li>
-        <li><strong>Bouchon</strong> — bouchon plastique d'une bouteille locale (≈ repère pour petites doses).</li>
-        <li><strong>Boîte de tomate</strong> — conserves/boîte (repère pour compost ou fumier).</li>
-        <li><strong>Gobelet / Cuillère</strong> — mesures usuelles pour microdose.</li>
+        <li><strong>Pas</strong> — distance d’un pas normal.</li>
+        <li><strong>Largeur de daba</strong> — largeur de la houe.</li>
+        <li><strong>Bouchon</strong> — bouchon plastique d’une bouteille.</li>
+        <li><strong>Boîte de tomate</strong> — mesure pour engrais organique.</li>
+        <li><strong>Gobelet / cuillère</strong> — microdose.</li>
       </ul>
-      <p class="note">Ces repères sont indicatifs : toujours respecter l'étiquette des intrants et demander conseil local si vous hésitez.</p>
     </section>
 
-    <!-- Section 3 : Accès aux fiches -->
-    <section class="card grid" aria-labelledby="fiches-title">
-      <h2 id="fiches-title">Fiches complètes</h2>
-
-      <article class="tile">
-        <h3>🌽 Maïs</h3>
-        <p>Préparation, semis, fertilisation microdose, maladies, vidéos, PDF.</p>
-        <p><a class="link" href="mais.html">Voir la fiche Maïs</a></p>
-      </article>
-
-      <article class="tile">
-        <h3>🌾 Riz</h3>
-        <p>Pépinière, transplantation, gestion de l'eau (AWD), maladies, vidéos, PDF.</p>
-        <p><a class="link" href="riz.html">Voir la fiche Riz</a></p>
-      </article>
-
-      <article class="tile">
-        <h3>🧵 Coton</h3>
-        <p>Conduite culturale, nutrition, ravageurs, stockage et écologie.</p>
-        <p><a class="link" href="coton.html">Voir la fiche Coton</a></p>
-      </article>
+    <section class="card grid">
+      <h2>🌱 Fiches techniques</h2>
+      <article><h3>🌽 Maïs</h3><a href="mais.html">Voir la fiche Maïs</a></article>
+      <article><h3>🌾 Riz</h3><a href="riz.html">Voir la fiche Riz</a></article>
+      <article><h3>🧵 Coton</h3><a href="coton.html">Voir la fiche Coton</a></article>
+      <article><h3>🌾 Sorgho</h3><a href="sorgho.html">Voir la fiche Sorgho</a></article>
+      <article><h3>🌾 Mil</h3><a href="mil.html">Voir la fiche Mil</a></article>
+      <article><h3>🌱 Niébé</h3><a href="niebe.html">Voir la fiche Niébé</a></article>
     </section>
 
-    <!-- Section 4 : Témoignage / Vidéo rapide -->
-    <section class="card" aria-labelledby="video-title">
-      <h2 id="video-title">Démonstration rapide</h2>
-      <p>Vidéo courte d'exemple (préparation sol et microdose) — visible directement sur la page.</p>
-
-      <!-- Intégration YouTube (responsive) -->
-      <div class="video-wrap" aria-hidden="false">
+    <section class="card">
+      <h2>🎥 Démonstration rapide</h2>
+      <div class="video-wrap">
         <iframe width="100%" height="320"
           src="https://www.youtube.com/embed/3Gx4SuN1RXc"
           title="Technique microdose maïs"
@@ -129,65 +126,26 @@
       </div>
     </section>
 
-    <!-- Section 5 : Contact rapide -->
-    <section class="card" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact / Signalement</h2>
-      <p>Si vous voyez une maladie ou un problème sur une parcelle, envoyez-nous un message avec une photo.</p>
-
-      <!-- Formulaire --- Formspree (remplacer TON_CODE_FORMSPREE par votre code) -->
-      <form class="form" id="contactForm" action="https://formspree.io/f/mqaderbn" method="POST" aria-describedby="contact-note">
-        <label>Nom
-          <input name="name" type="text" required aria-required="true" />
-        </label>
-
-        <label>Email
-          <input name="email" type="email" required aria-required="true" />
-        </label>
-
-        <label>Message
-          <textarea name="message" rows="4" required aria-required="true"></textarea>
-        </label>
-
-        <label>Photo (optionnelle)
-          <input name="photo" type="url" placeholder="URL de l'image (hébergée)" aria-describedby="photo-help" />
-          <small id="photo-help">Pour envoyer une photo depuis votre téléphone, vous pouvez d'abord l'héberger (ex. WhatsApp, Google Drive public) et coller le lien ici.</small>
-        </label>
-
-        <label class="checkbox">
-          <input type="checkbox" required /> J'accepte le traitement de mon message (RGPD/consentement)
-        </label>
-
-        <div>
-          <button class="btn" type="submit">Envoyer</button>
-        </div>
-
-        <p id="contact-note" class="note">Formulaire protégé par Formspree. Remplacez <code>TON_CODE_FORMSPREE</code> par votre code Formspree (voir instructions dans le README).</p>
+    <section class="card">
+      <h2>📩 Contact</h2>
+      <form action="https://formspree.io/f/TON_CODE_FORMSPREE" method="POST">
+        <label>Nom <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Message <textarea name="message" rows="5" required></textarea></label>
+        <button type="submit">Envoyer</button>
       </form>
+      <p>Email direct : <a href="mailto:fapagricole@gmail.com">fapagricole@gmail.com</a></p>
     </section>
 
-    <!-- Section 6 : Abonnement et PWA -->
-    <section class="card" aria-labelledby="pwa-title">
-      <h2 id="pwa-title">Mode Premium & Application</h2>
-      <p>Abonnement Premium : <strong>25 000 XOF / mois</strong> ou <strong>85 000 XOF / an</strong> — accès aux PDF, guides avancés, support prioritaire et contenu hors-ligne (PWA).</p>
-      <p>Vous pouvez installer FAP sur votre téléphone comme une application (bouton d'installation proposé par votre navigateur).</p>
+    <section class="card">
+      <h2>⭐ Premium & Application</h2>
+      <p>25 000 XOF / mois ou 85 000 XOF / an — guides avancés, PDF, vidéos exclusives, mode hors ligne (PWA).</p>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© 2025 FAP — Burkina Faso. Conseils indicatifs ; consultez un technicien local pour prescriptions chimiques.</p>
-      <p class="muted">Site développé pour usage pédagogique et pratique. Ne remplace pas un diagnostic technique en personne.</p>
-    </div>
+  <footer class="site-footer">
+    <p>© 2025 FAP — Burkina Faso. Conseils à titre indicatif.</p>
   </footer>
-
-  <!-- NOTE POUR LE DEPLOIEMENT
-       - Remplace TON_CODE_FORMSPREE dans le formulaire par ton code Formspree.
-       - Assure-toi d'ajouter style.css et script.js à la racine du dépôt.
-       - Active GitHub Pages: Settings → Pages → Source = main branch / (root).
-       - Pour PWA complet, inclure manifest.json et service-worker.js (je te fournis ces fichiers ensuite).
-  -->
-
 </body>
-</html>
+  </html>
