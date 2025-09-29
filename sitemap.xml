@@ -3,58 +3,58 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Cultures principales -->
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/mais.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/mais.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/riz.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/riz.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/coton.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/coton.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.9</priority>
   </url>
 
   <!-- Autres cultures prévues -->
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/sorgho.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/sorgho.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/mil.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/mil.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/niebe.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/niebe.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.7</priority>
   </url>
 
   <!-- Pages génériques -->
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/contact.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/contact.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://adrielsavadogo-web.github.io/FAP/about.html</loc>
+    <loc>https://adrielsavadogo-web.github.io/-FAP-/about.html</loc>
     <lastmod>2025-09-05</lastmod>
     <priority>0.5</priority>
   </url>
