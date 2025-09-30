@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://adrielsavadogo-web.github.io/-FAP-/sitemap.xml
